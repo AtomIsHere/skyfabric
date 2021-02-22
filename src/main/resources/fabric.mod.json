@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "skyfabric",
+  "version": "${version}",
+  "name": "Skyfabric",
+  "description": "Server Side mod for the skybane SMP",
+  "authors": [
+    "AtomIsHere"
+  ],
+  "contact": {
+    "website": "https://github.com/AtomIsHere"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/skyfabric/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.github.atomishere.skyfabric.client.SkyFabricClient"
+    ],
+    "main": [
+      "com.github.atomishere.skyfabric.SkyFabric"
+    ]
+  },
+  "mixins": [
+    "skyfabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
