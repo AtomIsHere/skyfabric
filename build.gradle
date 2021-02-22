@@ -10,6 +10,16 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+
+    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+    maven { url 'https://nexus.vankka.dev/repository/maven-public/' }
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
     //to change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -19,8 +29,10 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-    // You may need to force-disable transitiveness on them.
+    implementation(include('io.sentry:sentry:3.1.0'))
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
 }
 
 processResources {
