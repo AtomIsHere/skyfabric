@@ -19,12 +19,15 @@
 package com.github.atomishere.skyfabric;
 
 import com.github.atomishere.skyfabric.error.ErrorHandler;
+import com.github.atomishere.skyfabric.log.LoggingManager;
 import com.github.atomishere.skyfabric.service.ServiceManager;
+import lombok.Getter;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.server.MinecraftServer;
 
 public class SkyFabric implements ModInitializer {
+    @Getter
     private ErrorHandler errorHandler;
 
     private ServiceManager serviceManager;
@@ -41,6 +44,7 @@ public class SkyFabric implements ModInitializer {
     public void onStart(MinecraftServer server) {
         serviceManager = new ServiceManager(this);
         // Register services
+        serviceManager.registerService(LoggingManager.class);
     }
 
     public void onStop(MinecraftServer server) {
