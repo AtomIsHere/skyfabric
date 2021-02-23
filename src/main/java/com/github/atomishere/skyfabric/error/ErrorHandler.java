@@ -33,10 +33,6 @@ public class ErrorHandler {
         });
     }
 
-    public void stop() {
-        //
-    }
-
     @SuppressWarnings("DuplicateExpressions")
     public void handle(Exception ex, Severity severity, boolean shouldLog) {
         if(shouldLog) {

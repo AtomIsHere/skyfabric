@@ -14,9 +14,6 @@
   "icon": "assets/skyfabric/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "com.github.atomishere.skyfabric.client.SkyFabricClient"
-    ],
     "main": [
       "com.github.atomishere.skyfabric.SkyFabric"
     ]
